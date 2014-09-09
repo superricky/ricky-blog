@@ -1,0 +1,39 @@
+doctype html
+html lang="en-US"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    title RickyBlog
+    link rel="shortcut icon" href="assets/images/favicon.png"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    script type="text/javascript" src="assets/javascripts/scripts.js"
+    .container
+      .hfeed id="page"
+        div id="wrapper"
+          header id="branding" role="banner"
+            h1 id="site-title"
+              a href="index.html" title="Serendipity" rel="home"
+                img src="assets/style/images/touxiang.jpg" alt="Serendipity"
+            nav.access id="access" role="navigation"
+              .menu id="menu"
+                ul id="tiny"
+                  li
+                    = link_to 'Index', root_path
+                  li
+                    a href="gallery.html" Blog
+                  li
+                    a href="misc.html" About Me
+                  li
+                    a href="contact.html" Contact
+              .triangle-l
+              .triangle-r
+          div id="main"
+            div id="primary"
+              div id="content" role="main"
+                = yield
+          footer id="colophon" role="contentinfo"
+            div id="site-generator"
+              Copyright 2014 - ricky scott
